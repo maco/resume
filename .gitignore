@@ -1,0 +1,7 @@
+.texpadtmp/
+
+*.log
+*.tmp
+*.dvi
+*.pdf
+*~
