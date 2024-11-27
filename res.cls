@@ -257,18 +257,48 @@
 \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% this is used to print the name and headline at the top of
+% the page with a hline followed by the address
+%
+\def\namefont{\LARGE\bf}
+\def\@withheadline{\begingroup
+  \def\\{, }
+  \leavevmode\hbox to \textwidth
+    {\namefont\@name\hfill\normalfont\footnotesize\@headline}
+  \vskip 1pt
+  \fullline
+  \vskip 1pt
+  \fullline
+  \vskip 2pt
+  % where do you live?
+  \@ifundefined{@addressone}{%
+    % do nothing
+  }{%
+    \leavevmode\hbox to \textwidth
+      {\hfill\vbox{\hbox{\footnotesize \@addressone}
+		   \hbox{\@addresstwo}
+		  }%
+      }\par
+  }
+\endgroup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HEADINGS:
-% There are two types of headings:
+% There are three types of headings:
 % 1) one with the name centered and the address centered or
 %    in the left and right side if there are two address
 % 2) one where the name is in the upper left corner 
-%    the a line accross the paper
+%    then a line accross the paper
 %    then the address all on one line in the right corner
 %    the second address will be directly below the first if defined
-%
+% 3) one where the name is in the upper left corner 
+%    then the headline is smaller next to it
+%    then a line accross the paper
+%    then the address all on one line in the right corner
+%    the second address will be directly below the first if defined
 \let\print@name\relax
 \def\ds@centered{\ifx\print@name\relax\let\print@name\@printcentername\fi}
 \def\ds@line{\ifx\print@name\relax\let\print@name\@linename\fi}
+\def\ds@headline{\ifx\print@name\relax\let\print@name\@withheadline\fi}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -462,7 +492,15 @@
 
 %\input article.sty
 
-\if@line\ds@line\else\ds@centered\fi
+\if@line
+  \ds@line
+\else
+  \if@headline
+    \ds@headline
+  \else
+    \ds@centered
+  \fi
+\fi
 \if@margin\ds@margin\else\ds@overlapped\fi
 
 
@@ -500,6 +538,14 @@
 
 \def\address#1{
   \@ifundefined{@addressone}{\def\@addressone{#1}}{\def\@addresstwo{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use this to define a headline for the line style
+%
+\def\headline#1{\def\@headline{#1}}
+
+\def\@headline{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % if you want to print your name and address is a slightly
