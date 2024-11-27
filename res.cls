@@ -190,9 +190,11 @@
 \LoadClassWithOptions{article}
 
 \newif\if@line
+\newif\if@headline
 \newif\if@margin
 
 \DeclareOption{line}{\@linetrue}
+\DeclareOption{headline}{\@headlinetrue}
 \DeclareOption{centered}{\@linefalse}
 
 \DeclareOption{margin}{\@margintrue}
