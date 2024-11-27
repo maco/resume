@@ -1,6 +1,11 @@
 \documentclass[headline, letterpaper]{res}
 \usepackage[pdftex, pdftitle={Mackenzie Morgan's Resume}, pdfsubject={resume, Mackenzie Morgan}, pdfauthor={Mackenzie Morgan}, pdfkeywords={resume, linux, unix, latex, web, python, elixir, django, css, html}]{hyperref}
 \usepackage{latexsym}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep}
+
+%\usepackage{lua-visual-debug}
+
 \begin{document}
 
 \name{Mackenzie R. Morgan}
@@ -10,47 +15,33 @@
 	%\section{Objective}
 	%Seeking a challenging role as a web developer, using both frontend and backend skillsets 
 	%Seeking a challenging role as a Python developer in a *nix environment
+	\section{Technical Skills}
+	\begin{itemize}
+		\item Elixir, Phoenix, Alchemy (GraphQL)
+		\item Python, Django, Django REST Framework
+		\item Erlang
+		\item ReactJS
+	\end{itemize}
+
 	
 \input{work}
 
 \input{foss}
-%	\section{Skills}
-%		%\skilltype{Computer Languages}{Python, Java, C, MIPS Assembly, PHP, SQL, (X)HTML, CSS, Javascript, bash, sed}
-%		\skilltype{Languages}{Ruby, Javascript, Python, Perl, PHP, SQL, (X)HTML, CSS, bash, sed}
-%
-%		%\skilltype{Toolkits \& Frameworks}{GTK+, GLib, PyGTK, PyQt, PyKDE, JQuery, Django, Rails, Ionic, Angular Material, AngularJS, BackboneJS}
-%		\skilltype{Toolkits \& Frameworks}{React, Rails, Django, Ionic, Angular Material, AngularJS, JQuery}
-%		
-%		\skilltype{Platforms \& Tools}{Linux (Ubuntu, Debian, Red Hat, SUSE), Mac OS X, Solaris 8--10, AIX 5, bzr, svn, cvs, git/GitHub, \LaTeX, Circle CI, Travis CI, Docker}
-%		
-%		\skilltype{Human Languages}{Spanish, American Sign Language (all novice)}
-		
 
 	\section{Education \& Certifications}
         George Washington University, BS Computer Science\\
-%		\school{George Washington University \hfill 2006--2010}
-%			\schooldetail{Degree}{Bachelors of Science}\\
-%			\schooldetail{Major}{Computer Science}\\
-%			\schooldetail{Graduation}{Jan 2011}
 		%\skilltype{Trainings}{Fundamentals of Intrusion Detection Systems (IDS) (ACM), Quality Assurance (ACM), Hardening Linux (ACM), Sourcefire 3D System}
 		Instituto Cervantes, DELE Spanish Diploma Level B2
 	\section{Speaking Engagements}
-	        \textbullet \ ``Relearning How to Think'' at Code BEAM Lite NYC 2024\\
-			\textbullet \ ``Typing with Pixie Dust'' at Code BEAM America 2022 \& in Spanish at Code BEAM Mexico City 2023\\
-			\textbullet \ ``Dealing with a Monster Ecto Query'' at Elixir Wizards Conference 2021, FOSDEM 2023\\     
-			\hspace*{0.25in}and Women Who Code DC meetup 2023\\
-			\textbullet \ ``Ubuntu Development Processes'' at FOSSCON \& Southeast Linux Fest UbuCon 2011\\
-			\textbullet \ ``Is Linux Secure?'' at Southeast Linux Fest 2010\\
-			\textbullet \ ``Sysadmins' Rosetta Stone'' at Ohio Linux Fest 2009\\
-			%\hspace*{0.25in}and DCLUG July 2009\\
-			\textbullet \ ``Don't Get Cracked on Hostile WiFi'' at Ohio Linux Fest 2008\\
-			%\textbullet \ Presented ``Open Source for Non-Profits'' to Women's Information Network 2008\\
-
-			
-			
-			
-			
-
-
+	\begin{itemize}
+		    \item``Relearning How to Think'' at Code BEAM Lite NYC 2024
+			\item``Typing with Pixie Dust'' at Code BEAM America 2022 \& in Spanish at Code BEAM Mexico City 2023
+			\item``Dealing with a Monster Ecto Query'' at Elixir Wizards Conference 2021, FOSDEM 2023 and Women Who Code DC meetup 2023
+			\item``Ubuntu Development Processes'' at FOSSCON \& Southeast Linux Fest UbuCon 2011
+			\item``Is Linux Secure?'' at Southeast Linux Fest 2010
+			\item``Sysadmins' Rosetta Stone'' at Ohio Linux Fest 2009%and DCLUG July 2009
+			\item``Don't Get Cracked on Hostile WiFi'' at Ohio Linux Fest 2008
+			%\item Presented ``Open Source for Non-Profits'' to Women's Information Network 2008
+	\end{itemize}
 \end{resume}
 \end{document}
